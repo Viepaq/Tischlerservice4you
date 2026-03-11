@@ -48,7 +48,7 @@ export default function Hero() {
           TISCHLERSERVICE4YOU
         </p>
 
-        <h1 className="max-w-4xl font-playfair text-4xl font-bold leading-[1.1] text-white max-md:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-md:[text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
+        <h1 className="max-w-4xl font-playfair text-4xl font-bold leading-[1.1] text-white max-md:text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-md:[text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
           <span className="font-playfair italic font-normal text-warm-100 [text-shadow:0_2px_4px_rgba(0,0,0,0.5),0_0_30px_rgba(0,0,0,0.25)]">
             Willkommen bei
           </span>
