@@ -36,8 +36,8 @@ export default function Hero() {
         />
       </div>
 
-      {/* Warm dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-warm-900/60 via-warm-900/40 to-warm-900/70 max-md:from-warm-900/75 max-md:via-warm-900/55 max-md:to-warm-900/80" />
+      {/* Warm overlay — lighter for inviting feel */}
+      <div className="absolute inset-0 bg-gradient-to-b from-warm-900/35 via-warm-900/20 to-warm-900/45 max-md:from-warm-900/40 max-md:via-warm-900/25 max-md:to-warm-900/50" />
 
       {/* Content */}
       <div
@@ -49,7 +49,7 @@ export default function Hero() {
         </p>
 
         <h1 className="max-w-4xl font-playfair text-4xl font-bold leading-[1.1] text-white max-md:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-md:[text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
-          <span className="font-playfair italic font-normal text-warm-200 max-md:[text-shadow:0_1px_3px_rgba(0,0,0,0.35)]">
+          <span className="font-playfair italic font-normal text-warm-100 [text-shadow:0_2px_4px_rgba(0,0,0,0.5),0_0_30px_rgba(0,0,0,0.25)]">
             Willkommen bei
           </span>
           <br />
