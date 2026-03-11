@@ -16,6 +16,12 @@ const inter = Inter({
   display: "swap",
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
   title: "Tischlerservice4you | Ihr Tischler in Wien – Notdienst 24H",
   description:

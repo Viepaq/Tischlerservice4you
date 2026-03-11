@@ -134,12 +134,12 @@ export default function Header() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "fixed inset-0 z-40 transition-all duration-300 lg:hidden",
+          "fixed inset-0 z-[60] transition-all duration-300 lg:hidden",
           menuOpen ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"
         )}
       >
         <div
-          className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/50 backdrop-blur-md max-md:bg-black/45 max-md:backdrop-blur-lg"
           onClick={() => setMenuOpen(false)}
         />
         <div
@@ -148,7 +148,13 @@ export default function Header() {
             menuOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="flex h-16 items-center justify-end px-5">
+          <div className="flex h-16 items-center justify-between px-5">
+            <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center">
+              <span className="font-playfair text-base font-bold italic text-wood-700">
+                TISCHLERSERVICE
+                <span className="not-italic text-foreground">4YOU</span>
+              </span>
+            </Link>
             <button
               onClick={() => setMenuOpen(false)}
               className="flex h-9 w-9 items-center justify-center text-wood-400 hover:text-foreground"

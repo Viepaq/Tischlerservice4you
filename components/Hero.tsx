@@ -37,26 +37,26 @@ export default function Hero() {
       </div>
 
       {/* Warm dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-warm-900/60 via-warm-900/40 to-warm-900/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-warm-900/60 via-warm-900/40 to-warm-900/70 max-md:from-warm-900/75 max-md:via-warm-900/55 max-md:to-warm-900/80" />
 
       {/* Content */}
       <div
         className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center"
         style={{ opacity: textOpacity }}
       >
-        <p className="mb-4 text-sm font-medium tracking-[0.25em] text-warm-400 sm:text-base">
+        <p className="mb-4 text-sm font-medium tracking-[0.25em] text-warm-400 sm:text-base max-md:text-white/90 max-md:[text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
           TISCHLERSERVICE4YOU
         </p>
 
-        <h1 className="max-w-4xl font-playfair text-4xl font-bold leading-[1.1] text-white max-md:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-          <span className="font-playfair italic font-normal text-warm-300">
+        <h1 className="max-w-4xl font-playfair text-4xl font-bold leading-[1.1] text-white max-md:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-md:[text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
+          <span className="font-playfair italic font-normal text-warm-300 max-md:text-white/95">
             Willkommen bei
           </span>
           <br />
           Ihrem Tischler
         </h1>
 
-        <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-white/60 max-md:text-xs max-md:mt-4 sm:text-base sm:leading-relaxed">
+        <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-white/60 max-md:hidden sm:text-base sm:leading-relaxed">
           Fenster, T&uuml;ren, Montagen und Reparaturen &mdash; professionell,
           fair und verl&auml;sslich. Seit &uuml;ber 25 Jahren in Wien.
         </p>
@@ -72,7 +72,7 @@ export default function Hero() {
           <Button
             variant="outline"
             size="xl"
-            className="w-full max-md:justify-center border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white"
+            className="w-full max-md:justify-center border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white max-md:border-white/40 max-md:bg-white/10 max-md:backdrop-blur-sm"
             asChild
           >
             <a href="tel:+436642509912" className="gap-2">
