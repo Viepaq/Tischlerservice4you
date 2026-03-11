@@ -49,7 +49,7 @@ export default function Hero() {
         </p>
 
         <h1 className="max-w-4xl font-playfair text-4xl font-bold leading-[1.1] text-white max-md:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-md:[text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
-          <span className="font-playfair italic font-normal text-warm-300 max-md:text-white/95">
+          <span className="font-playfair italic font-normal text-warm-200 max-md:[text-shadow:0_1px_3px_rgba(0,0,0,0.35)]">
             Willkommen bei
           </span>
           <br />
@@ -61,10 +61,10 @@ export default function Hero() {
           fair und verl&auml;sslich. Seit &uuml;ber 25 Jahren in Wien.
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row max-md:w-full max-md:max-w-sm">
+        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row max-md:w-full max-md:max-w-[280px] max-md:gap-2">
           <Button
             size="xl"
-            className="w-full max-md:justify-center bg-warm-400 text-warm-900 hover:bg-warm-300"
+            className="w-full max-md:justify-center max-md:h-10 max-md:rounded-lg max-md:px-5 max-md:text-sm max-md:font-medium max-md:shadow-none bg-warm-400 text-warm-900 hover:bg-warm-300"
             asChild
           >
             <Link href="/kontakt">Jetzt anfragen</Link>
@@ -72,11 +72,11 @@ export default function Hero() {
           <Button
             variant="outline"
             size="xl"
-            className="w-full max-md:justify-center border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white max-md:border-white/40 max-md:bg-white/10 max-md:backdrop-blur-sm"
+            className="w-full max-md:justify-center max-md:h-10 max-md:rounded-lg max-md:px-5 max-md:text-sm max-md:font-medium max-md:shadow-none border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white max-md:border-white/40 max-md:bg-white/10 max-md:backdrop-blur-sm"
             asChild
           >
             <a href="tel:+436642509912" className="gap-2">
-              <Phone className="h-4 w-4" />
+              <Phone className="h-4 w-4 max-md:h-3.5 max-md:w-3.5" />
               Notdienst 24H
             </a>
           </Button>
