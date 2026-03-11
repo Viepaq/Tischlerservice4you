@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 30% 97%;
+    --foreground: 25 15% 14%;
+    --card: 36 25% 99%;
+    --card-foreground: 25 15% 14%;
+    --popover: 36 25% 99%;
+    --popover-foreground: 25 15% 14%;
+    --primary: 30 45% 38%;
+    --primary-foreground: 40 30% 97%;
+    --secondary: 33 25% 93%;
+    --secondary-foreground: 25 15% 14%;
+    --muted: 33 20% 93%;
+    --muted-foreground: 25 10% 46%;
+    --accent: 36 45% 52%;
+    --accent-foreground: 25 45% 12%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 33 18% 88%;
+    --input: 33 18% 88%;
+    --ring: 30 45% 38%;
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background-color: hsl(36 45% 52%);
+  color: #fff;
+}
