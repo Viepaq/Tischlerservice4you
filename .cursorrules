@@ -1,0 +1,6 @@
+You are building a modern website for an Austrian carpentry business.
+
+REFERENCE: The old website is located at ~/tischler-projekt/tischler-old/tischlerservice4you.at/
+Always read those HTML files to extract content before creating any component.
+
+TECH STACK: Next.js 14, Tailwind CSS, TypeScript

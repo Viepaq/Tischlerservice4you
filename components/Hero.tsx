@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
@@ -68,17 +68,6 @@ export default function Hero() {
             asChild
           >
             <Link href="/kontakt">Jetzt anfragen</Link>
-          </Button>
-          <Button
-            variant="outline"
-            size="xl"
-            className="w-full max-md:justify-center max-md:h-10 max-md:rounded-lg max-md:px-5 max-md:text-sm max-md:font-medium max-md:shadow-none border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white max-md:border-white/40 max-md:bg-white/10 max-md:backdrop-blur-sm"
-            asChild
-          >
-            <a href="tel:+436642509912" className="gap-2">
-              <Phone className="h-4 w-4 max-md:h-3.5 max-md:w-3.5" />
-              Notdienst 24H
-            </a>
           </Button>
         </div>
       </div>

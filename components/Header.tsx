@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Phone, Menu, X, ChevronRight } from "lucide-react";
@@ -50,17 +51,17 @@ export default function Header() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span
+            <Image
+              src="/images/Tischler Logo1.png"
+              alt="Tischlerservice4you"
+              width={140}
+              height={48}
               className={cn(
-                "font-playfair text-lg font-bold italic transition-colors duration-500 max-md:text-base",
-                scrolled ? "text-wood-700" : "text-warm-400"
+                "h-10 w-auto object-contain transition-all duration-500 max-md:h-8",
+                !scrolled && "brightness-0 invert"
               )}
-            >
-              TISCHLERSERVICE
-              <span className={cn("not-italic transition-colors duration-500", scrolled ? "text-foreground" : "text-white")}>
-                4YOU
-              </span>
-            </span>
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -150,10 +151,13 @@ export default function Header() {
         >
           <div className="flex h-16 items-center justify-between px-5">
             <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center">
-              <span className="font-playfair text-base font-bold italic text-wood-700">
-                TISCHLERSERVICE
-                <span className="not-italic text-foreground">4YOU</span>
-              </span>
+              <Image
+                src="/images/Tischler Logo1.png"
+                alt="Tischlerservice4you"
+                width={120}
+                height={40}
+                className="h-8 w-auto object-contain"
+              />
             </Link>
             <button
               onClick={() => setMenuOpen(false)}

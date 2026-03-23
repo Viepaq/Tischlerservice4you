@@ -21,7 +21,7 @@ export default function ImpressumPage() {
           <div className="space-y-4 text-sm text-foreground/80">
             <div>
               <p className="font-semibold text-foreground">Neim Zekiri</p>
-              <p>Innstraße 2/5</p>
+              <p>Bäuerlegasse 24/G21-22</p>
               <p>1200 Wien</p>
             </div>
             <div>

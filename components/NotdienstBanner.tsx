@@ -1,12 +1,6 @@
 import Link from "next/link";
-import { Phone, ShieldAlert, CloudLightning, Car, ArrowRight, Clock } from "lucide-react";
+import { Phone, ShieldAlert, ArrowRight, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-
-const SCENARIOS = [
-  { icon: ShieldAlert, label: "Einbruch", id: "einbruch" },
-  { icon: CloudLightning, label: "Unwetter", id: "unwetter" },
-  { icon: Car, label: "Unfall", id: "unfall" },
-];
 
 export default function NotdienstBanner() {
   return (
@@ -20,28 +14,23 @@ export default function NotdienstBanner() {
             Rund um die Uhr für Sie da
           </h2>
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-            Einbruch, Unwetter oder Unfall — wir kommen sofort.
+            Nach einem Einbruch — wir kommen sofort.
           </p>
         </div>
 
         {/* Card */}
         <div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-2xl bg-gradient-to-br from-amber-900 via-amber-950 to-stone-900 shadow-xl shadow-amber-950/20">
           <div className="px-7 py-8 sm:px-10 sm:py-10 max-md:px-5 max-md:py-6">
-            {/* Scenarios row */}
-            <div className="grid grid-cols-3 gap-3 max-md:gap-2">
-              {SCENARIOS.map(({ icon: Icon, label, id }) => (
-                <Link
-                  key={id}
-                  href={`/notdienst#${id}`}
-                  className="group flex flex-col items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-3 py-4 text-center transition-all hover:border-amber-400/25 hover:bg-white/10 max-md:py-3"
-                >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/15">
-                    <Icon className="h-5 w-5 text-amber-300" />
-                  </div>
-                  <span className="text-sm font-medium text-white max-md:text-xs">{label}</span>
-                </Link>
-              ))}
-            </div>
+            {/* Scenario */}
+            <Link
+              href="/notdienst#einbruch"
+              className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4 transition-all hover:border-amber-400/25 hover:bg-white/10 max-md:py-3"
+            >
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/15">
+                <ShieldAlert className="h-5 w-5 text-amber-300" />
+              </div>
+              <span className="text-sm font-medium text-white">Nach Einbruch — Sofortsicherung &amp; Reparatur</span>
+            </Link>
 
             {/* Divider */}
             <div className="my-6 border-t border-white/10" />

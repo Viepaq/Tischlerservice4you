@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Kontakt | Tischlerservice4you Wien",
   description:
-    "Kontaktieren Sie uns für Tischlerarbeiten in Wien. Innstraße 2/5, 1200 Wien. Telefon: +43 664 250 99 12.",
+    "Kontaktieren Sie uns für Tischlerarbeiten in Wien. Bäuerlegasse 24/G21-22, 1200 Wien. Telefon: +43 664 250 99 12.",
 };
 
 export default function KontaktPage() {
