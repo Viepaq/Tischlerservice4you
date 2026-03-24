@@ -43,10 +43,10 @@ export default function NotdienstBanner() {
                 </div>
                 <div>
                   <a
-                    href="tel:+436642509912"
+                    href="tel:013305557"
                     className="text-lg font-bold text-white transition-opacity hover:opacity-80"
                   >
-                    +43 664 250 99 12
+                    013305557
                   </a>
                   <div className="flex items-center gap-1.5 text-xs text-amber-300/60">
                     <Clock className="h-3 w-3" />

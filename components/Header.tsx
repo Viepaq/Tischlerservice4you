@@ -48,18 +48,16 @@ export default function Header() {
             : "bg-transparent"
         )}
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
+        <div className="flex h-16 w-full items-center justify-between px-4 lg:px-6 overflow-visible max-md:h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" style={{ marginTop: "6px" }}>
             <Image
               src="/images/Tischler Logo1.png"
               alt="Tischlerservice4you"
-              width={140}
-              height={48}
-              className={cn(
-                "h-10 w-auto object-contain transition-all duration-500 max-md:h-8",
-                !scrolled && "brightness-0 invert"
-              )}
+              width={560}
+              height={130}
+              className="h-[110px] w-auto object-contain transition-all duration-500 max-md:h-24"
+              style={!scrolled ? { filter: "drop-shadow(0 1px 6px rgba(0,0,0,0.55)) brightness(1.15)" } : undefined}
               priority
             />
           </Link>
@@ -85,7 +83,7 @@ export default function Header() {
           {/* Right: Phone + CTA */}
           <div className="hidden items-center gap-4 lg:flex">
             <a
-              href="tel:+436642509912"
+              href="tel:013305557"
               className={cn(
                 "flex h-8 w-8 items-center justify-center rounded-full transition-colors",
                 scrolled ? "text-wood-500 hover:bg-wood-50 hover:text-foreground" : "text-white/50 hover:text-white"
@@ -100,7 +98,7 @@ export default function Header() {
                 "rounded-full px-5 py-2 text-[11px] font-semibold tracking-wider transition-all duration-300",
                 scrolled
                   ? "bg-wood-700 text-white hover:bg-wood-800"
-                  : "bg-warm-400/90 text-warm-900 hover:bg-warm-400"
+                  : "bg-warm-400/90 text-white hover:bg-warm-400"
               )}
             >
               ANFRAGEN
@@ -110,7 +108,7 @@ export default function Header() {
           {/* Mobile */}
           <div className="flex items-center gap-2 lg:hidden">
             <a
-              href="tel:+436642509912"
+              href="tel:013305557"
               className={cn(
                 "flex h-9 w-9 items-center justify-center transition-colors max-md:min-h-[44px] max-md:min-w-[44px]",
                 scrolled ? "text-wood-500 hover:text-foreground" : "text-white/60 hover:text-white"
@@ -149,14 +147,14 @@ export default function Header() {
             menuOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="flex h-16 items-center justify-between px-5">
+          <div className="flex h-24 items-center justify-between px-5">
             <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center">
               <Image
                 src="/images/Tischler Logo1.png"
                 alt="Tischlerservice4you"
-                width={120}
-                height={40}
-                className="h-8 w-auto object-contain"
+                width={260}
+                height={84}
+                className="h-20 w-auto object-contain"
               />
             </Link>
             <button
@@ -181,11 +179,11 @@ export default function Header() {
             ))}
             <div className="mx-4 my-3 h-px bg-wood-100" />
             <a
-              href="tel:+436642509912"
+              href="tel:013305557"
               className="flex items-center gap-2.5 px-4 py-3.5 text-sm text-wood-600 hover:text-foreground"
             >
               <Phone className="h-4 w-4 text-wood-400" />
-              +43 664 250 99 12
+              013305557
             </a>
             <div className="mt-3 px-3">
               <Link

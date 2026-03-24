@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const CONTACT = [
   { icon: MapPin, label: "Adresse", value: "Bäuerlegasse 24/G21-22, 1200 Wien" },
-  { icon: Phone, label: "Telefon", value: "+43 664 250 99 12", href: "tel:+436642509912" },
+  { icon: Phone, label: "Telefon", value: "013305557", href: "tel:013305557" },
   { icon: Mail, label: "E-Mail", value: "office@tischlerservice4you.at", href: "mailto:office@tischlerservice4you.at" },
 ];
 

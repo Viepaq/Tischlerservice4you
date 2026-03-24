@@ -14,13 +14,13 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-md:grid-cols-1 max-md:gap-8 max-md:text-center">
           {/* Brand */}
           <div className="max-md:flex max-md:flex-col max-md:items-center">
-            <Link href="/">
+            <Link href="/" className="max-md:block hidden">
               <Image
                 src="/images/Tischler Logo1.png"
                 alt="Tischlerservice4you"
-                width={140}
-                height={48}
-                className="h-10 w-auto object-contain"
+                width={320}
+                height={108}
+                className="h-28 w-auto object-contain"
               />
             </Link>
             <p className="mt-3 text-sm font-medium text-foreground/80">
@@ -42,9 +42,9 @@ export default function Footer() {
                 <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-wood-500" />
                 <span>Bäuerlegasse 24/G21-22, 1200 Wien</span>
               </div>
-              <a href="tel:+436642509912" className="flex items-center gap-2 text-foreground/70 hover:text-foreground">
+              <a href="tel:013305557" className="flex items-center gap-2 text-foreground/70 hover:text-foreground">
                 <Phone className="h-3.5 w-3.5 shrink-0 text-wood-500" />
-                +43 664 250 99 12
+                013305557
               </a>
               <a href="mailto:office@tischlerservice4you.at" className="flex items-center gap-2 text-foreground/70 hover:text-foreground">
                 <Mail className="h-3.5 w-3.5 shrink-0 text-wood-500" />

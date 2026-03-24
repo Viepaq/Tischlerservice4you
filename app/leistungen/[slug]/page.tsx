@@ -74,7 +74,7 @@ export default async function ServicePage({ params }: Props) {
                   <Link href="/kontakt">Jetzt anfragen</Link>
                 </Button>
                 <Button variant="outline" size="lg" className="gap-2 max-md:w-full" asChild>
-                  <a href="tel:+436642509912">
+                  <a href="tel:013305557">
                     <Phone className="h-4 w-4" />
                     Anrufen
                   </a>
@@ -191,7 +191,7 @@ export default async function ServicePage({ params }: Props) {
                       size="lg"
                       asChild
                     >
-                      <a href="tel:+436642509912">
+                      <a href="tel:013305557">
                         <Phone className="h-4 w-4" />
                         Anrufen
                       </a>

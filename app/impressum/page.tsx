@@ -27,8 +27,8 @@ export default function ImpressumPage() {
             <div>
               <p>
                 <span className="font-medium text-foreground">Telefon:</span>{" "}
-                <a href="tel:+436642509912" className="hover:text-foreground">
-                  +43 664 250 99 12
+                <a href="tel:013305557" className="hover:text-foreground">
+                  013305557
                 </a>
               </p>
               <p>

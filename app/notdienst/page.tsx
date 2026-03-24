@@ -51,9 +51,9 @@ export default function NotdienstPage() {
             professionell und mit dem passenden Werkzeug.
           </p>
           <Button variant="emergency" size="xl" className="mt-8 gap-2" asChild>
-            <a href="tel:+436642509912">
+            <a href="tel:013305557">
               <Phone className="h-4 w-4" />
-              +43 664 250 99 12
+              013305557
             </a>
           </Button>
         </div>
@@ -136,8 +136,8 @@ export default function NotdienstPage() {
                   <h4 className="font-semibold text-emergency">Notfalltelefon</h4>
                 </div>
                 <p className="mt-2 text-2xl font-bold text-foreground">
-                  <a href="tel:+436642509912" className="hover:text-emergency transition-colors">
-                    +43 664 250 99 12
+                  <a href="tel:013305557" className="hover:text-emergency transition-colors">
+                    013305557
                   </a>
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">0–24 Uhr, auch Sonn- und Feiertage</p>
@@ -176,7 +176,7 @@ export default function NotdienstPage() {
               </p>
               <div className="mt-6 flex flex-col gap-2.5 sm:flex-row max-md:flex-col">
                 <Button variant="emergency" size="lg" className="gap-2 max-md:w-full" asChild>
-                  <a href="tel:+436642509912">
+                  <a href="tel:013305557">
                     <Phone className="h-4 w-4" />
                     Jetzt anrufen
                   </a>

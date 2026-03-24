@@ -26,7 +26,7 @@ export default function Hero() {
         style={{ transform: `translateY(${parallax}px) scale(${1 + scrollY * 0.0003})` }}
       >
         <Image
-          src="/Mock3.jpg"
+          src="/images/Holzfoto1.jpg"
           alt="Tischlerwerkstatt — Handwerk mit Tradition"
           fill
           priority
@@ -37,15 +37,15 @@ export default function Hero() {
       </div>
 
       {/* Warm overlay — lighter for inviting feel */}
-      <div className="absolute inset-0 bg-gradient-to-b from-warm-900/35 via-warm-900/20 to-warm-900/45 max-md:from-warm-900/40 max-md:via-warm-900/25 max-md:to-warm-900/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-warm-900/10 via-warm-900/5 to-warm-900/15 max-md:from-warm-900/15 max-md:via-warm-900/8 max-md:to-warm-900/20" />
 
       {/* Content */}
       <div
-        className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center"
+        className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center max-md:justify-start max-md:pt-64"
         style={{ opacity: textOpacity }}
       >
-        <p className="mb-4 text-sm font-medium tracking-[0.25em] text-warm-400 sm:text-base max-md:text-white/90 max-md:[text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-          TISCHLERSERVICE4YOU
+        <p className="mb-3 hidden text-xs font-semibold tracking-[0.3em] text-white/80 uppercase max-md:block [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
+          Tischlerservice4you
         </p>
 
         <h1 className="max-w-4xl font-playfair text-4xl font-bold leading-[1.1] text-white max-md:text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-md:[text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
@@ -56,20 +56,21 @@ export default function Hero() {
           Ihrem Tischler
         </h1>
 
-        <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-white/60 max-md:hidden sm:text-base sm:leading-relaxed">
+        <p className="mx-auto mt-5 max-w-xs text-sm leading-relaxed text-white/70 sm:text-base sm:leading-relaxed sm:max-w-lg max-md:[text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
           Fenster, T&uuml;ren, Montagen und Reparaturen &mdash; professionell,
           fair und verl&auml;sslich. Seit &uuml;ber 25 Jahren in Wien.
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row max-md:w-full max-md:max-w-[280px] max-md:gap-2">
+        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row max-md:w-full max-md:max-w-[280px] max-md:gap-2">
           <Button
             size="xl"
-            className="w-full max-md:justify-center max-md:h-10 max-md:rounded-lg max-md:px-5 max-md:text-sm max-md:font-medium max-md:shadow-none bg-warm-400 text-warm-900 hover:bg-warm-300"
+            className="w-full max-md:justify-center max-md:h-10 max-md:rounded-lg max-md:px-5 max-md:text-sm max-md:font-medium max-md:shadow-none bg-warm-400 text-white hover:bg-warm-300"
             asChild
           >
             <Link href="/kontakt">Jetzt anfragen</Link>
           </Button>
         </div>
+
       </div>
 
       {/* Scroll indicator */}

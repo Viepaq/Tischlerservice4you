@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 
 const CONTACT_DETAILS = [
   { icon: MapPin, label: "Adresse", value: "Bäuerlegasse 24/G21-22, 1200 Wien", href: undefined },
-  { icon: Phone, label: "Telefon", value: "+43 664 250 99 12", href: "tel:+436642509912" },
+  { icon: Phone, label: "Telefon", value: "013305557", href: "tel:013305557" },
   { icon: Mail, label: "E-Mail", value: "office@tischlerservice4you.at", href: "mailto:office@tischlerservice4you.at" },
   { icon: Clock, label: "Erreichbarkeit", value: "Mo\u2013Fr: 08\u201318 Uhr \u00b7 Notdienst: 24/7", href: undefined },
 ];
