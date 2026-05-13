@@ -93,13 +93,13 @@ export default function Hero() {
       />
 
       {/* Scroll indicator */}
-      <a
-        href="#notdienst"
+      <button
+        onClick={() => document.getElementById("notdienst")?.scrollIntoView({ behavior: "smooth" })}
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/30 transition-colors hover:text-white/60 max-md:hidden"
         aria-label="Weiter"
       >
         <ArrowDown className="h-5 w-5 animate-bounce" />
-      </a>
+      </button>
     </section>
   );
 }
