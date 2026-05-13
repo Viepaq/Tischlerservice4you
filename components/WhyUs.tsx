@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Clock, Shield, Award, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -39,25 +40,46 @@ export default function WhyUs() {
           <h2 className="font-playfair text-3xl font-bold text-foreground sm:text-4xl">
             Das zeichnet uns aus
           </h2>
+          <p className="mx-auto mt-4 max-w-4xl leading-relaxed text-muted-foreground">
+            Wir verbinden saubere Handwerksarbeit mit Verlässlichkeit im Alltag:
+            klare Kommunikation, pünktliche Umsetzung und ein Ergebnis, das
+            langfristig hält.
+          </p>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 max-md:grid-cols-1 max-md:gap-4 max-md:mt-10">
-          {STRENGTHS.map(({ icon: Icon, title, description, color }) => (
-            <div
-              key={title}
-              className="rounded-xl border border-wood-200/50 bg-white/80 p-6 text-center backdrop-blur-sm transition-all hover:bg-white hover:shadow-md hover:shadow-wood-200/20 max-md:p-5"
-            >
-              <div className={`mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${color}`}>
-                <Icon className="h-6 w-6" />
-              </div>
-              <h3 className="mt-4 font-playfair text-base font-semibold text-foreground">
-                {title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {description}
-              </p>
+        <div className="mt-12 grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <div>
+            <div className="space-y-3">
+              {STRENGTHS.map(({ icon: Icon, title, description, color }) => (
+                <div
+                  key={title}
+                  className="flex items-start gap-4 rounded-xl border border-wood-200/50 bg-white/85 px-5 py-4 backdrop-blur-sm"
+                >
+                  <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${color}`}>
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-playfair text-base font-semibold text-foreground">
+                      {title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-wood-200/50 bg-white">
+            <Image
+              src="/images/PHOTO-2026-05-05-20-59-35 9.jpg"
+              alt="Tischlerarbeit in der Werkstatt"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
         </div>
       </div>
     </section>

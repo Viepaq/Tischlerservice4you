@@ -17,6 +17,7 @@ export interface Service {
   highlights: ServiceHighlight[];
   references?: string[];
   image: string;
+  galleryImages?: string[];
 }
 
 export const services: Service[] = [
@@ -54,6 +55,11 @@ export const services: Service[] = [
     ],
     references: ["Hausverwaltungen", "Privatkunden"],
     image: images.services["parkette-laminate"].src,
+    galleryImages: [
+      "/images/galerie/PHOTO-2026-05-06-19-50-04.jpg",
+      "/images/galerie/PHOTO-2026-05-06-19-47-19.jpg",
+      "/images/galerie/PHOTO-2026-05-06-19-47-19%202.jpg",
+    ],
   },
   {
     slug: "fenster-tueren",
@@ -90,6 +96,12 @@ export const services: Service[] = [
     ],
     references: ["Aufsperr- und Schlüsseldienste", "Hausverwaltungen", "Privatkunden"],
     image: images.services["fenster-tueren"].src,
+    galleryImages: [
+      "/images/galerie/PHOTO-2026-05-06-19-47-24.jpg",
+      "/images/galerie/PHOTO-2026-05-06-19-47-25%204.jpg",
+      "/images/galerie/PHOTO-2026-05-06-19-50-05.jpg",
+      "/images/galerie/PHOTO-2026-05-06-19-47-17.jpg",
+    ],
   },
   {
     slug: "montagen",
@@ -124,6 +136,11 @@ export const services: Service[] = [
       },
     ],
     image: images.services["montagen"].src,
+    galleryImages: [
+      "/images/galerie/PHOTO-2026-05-06-08-26-37.jpg",
+      "/images/galerie/PHOTO-2026-05-05-20-59-35%202.jpg",
+      "/images/galerie/PHOTO-2026-05-05-20-59-35%203.jpg",
+    ],
   },
   {
     slug: "reparaturen",
@@ -159,6 +176,11 @@ export const services: Service[] = [
       },
     ],
     image: images.services["reparaturen"].src,
+    galleryImages: [
+      "/images/galerie/PHOTO-2026-05-05-20-59-36%203.jpg",
+      "/images/galerie/PHOTO-2026-05-05-20-59-36%204.jpg",
+      "/images/galerie/PHOTO-2026-05-05-20-59-35.jpg",
+    ],
   },
   {
     slug: "ergaenzungen",
@@ -194,6 +216,11 @@ export const services: Service[] = [
       },
     ],
     image: images.services["ergaenzungen"].src,
+    galleryImages: [
+      "/images/galerie/PHOTO-2026-05-05-20-59-35%2010.jpg",
+      "/images/galerie/PHOTO-2026-05-06-19-47-24%202.jpg",
+      "/images/galerie/PHOTO-2026-05-06-19-50-04%202.jpg",
+    ],
   },
   {
     slug: "umbau-konstruktionen",
@@ -232,5 +259,11 @@ export const services: Service[] = [
       },
     ],
     image: images.services["umbau-konstruktionen"].src,
+    galleryImages: [
+      "/images/galerie/PHOTO-2026-05-05-20-59-36%207.jpg",
+      "/images/galerie/PHOTO-2026-05-05-20-59-36%2011.jpg",
+      "/images/galerie/PHOTO-2026-05-06-19-47-16.jpg",
+      "/images/galerie/PHOTO-2026-05-06-19-47-18.jpg",
+    ],
   },
 ];

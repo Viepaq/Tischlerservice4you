@@ -7,6 +7,12 @@ const LEGAL = [
   { href: "/impressum", label: "Impressum" },
 ];
 
+const NAV_FOOTER = [
+  { href: "/galerie", label: "Galerie" },
+  { href: "/notdienst", label: "Notdienst" },
+  { href: "/kontakt", label: "Kontakt" },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-wood-200/60 bg-gradient-to-b from-wood-50 to-warm-50">
@@ -53,12 +59,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Legal */}
+          {/* Navigation */}
           <div className="max-md:flex max-md:flex-col max-md:items-center">
             <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Rechtliches
+              Navigation
             </h4>
             <nav className="mt-3 flex flex-col gap-2">
+              {NAV_FOOTER.map((link) => (
+                <Link key={link.href} href={link.href} className="text-sm text-foreground/70 hover:text-foreground">
+                  {link.label}
+                </Link>
+              ))}
               {LEGAL.map((link) => (
                 <Link key={link.href} href={link.href} className="text-sm text-foreground/70 hover:text-foreground">
                   {link.label}
