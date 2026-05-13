@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 const NAV_LINKS = [
   { href: "/#leistungen", label: "LEISTUNGEN" },
   { href: "/#ueber-uns", label: "ÜBER UNS" },
+  { href: "/galerie", label: "GALERIE" },
   { href: "/notdienst", label: "NOTDIENST" },
   { href: "/kontakt", label: "KONTAKT" },
 ];
@@ -44,13 +45,20 @@ export default function Header() {
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out",
           scrolled
-            ? "border-b border-wood-200/60 bg-white/90 shadow-sm shadow-wood-200/20 backdrop-blur-xl"
+            ? "border-b border-wood-200/35 bg-white/55 backdrop-blur-md"
             : "bg-transparent"
         )}
       >
         <div className="flex h-16 w-full items-center justify-between px-4 lg:px-6 overflow-visible max-md:h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center" style={{ marginTop: "6px" }}>
+          <Link
+            href="/"
+            className={cn(
+              "flex items-center transition-opacity duration-300",
+              isHome && !scrolled && "pointer-events-none opacity-0"
+            )}
+            style={{ marginTop: "6px" }}
+          >
             <Image
               src="/images/Tischler Logo1.png"
               alt="Tischlerservice4you"
@@ -69,9 +77,9 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-[11px] font-medium tracking-[0.15em] transition-colors duration-300",
+                  "text-[11px] font-semibold tracking-[0.16em] transition-colors duration-300",
                   scrolled
-                    ? "text-wood-600 hover:text-foreground"
+                    ? "text-wood-800/90 hover:text-foreground"
                     : "text-white/70 hover:text-white"
                 )}
               >
@@ -95,10 +103,10 @@ export default function Header() {
             <Link
               href="/kontakt"
               className={cn(
-                "rounded-full px-5 py-2 text-[11px] font-semibold tracking-wider transition-all duration-300",
+                "rounded-full px-5 py-2 text-[11px] font-semibold tracking-wider transition-all duration-300 border",
                 scrolled
-                  ? "bg-wood-700 text-white hover:bg-wood-800"
-                  : "bg-warm-400/90 text-white hover:bg-warm-400"
+                  ? "border-wood-600/50 text-wood-700 hover:-translate-y-0.5 hover:border-wood-700 hover:bg-wood-100/30"
+                  : "border-white/40 text-white hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/10"
               )}
             >
               ANFRAGEN
@@ -159,7 +167,7 @@ export default function Header() {
             </Link>
             <button
               onClick={() => setMenuOpen(false)}
-              className="flex h-9 w-9 items-center justify-center text-wood-400 hover:text-foreground"
+              className="flex h-9 w-9 min-h-[44px] min-w-[44px] items-center justify-center text-wood-400 hover:text-foreground"
               aria-label="Schließen"
             >
               <X className="h-5 w-5" />
@@ -189,7 +197,7 @@ export default function Header() {
               <Link
                 href="/kontakt"
                 onClick={() => setMenuOpen(false)}
-                className="block rounded-full bg-wood-700 py-3 text-center text-sm font-semibold tracking-wider text-white hover:bg-wood-800 max-md:min-h-[48px] max-md:flex max-md:items-center max-md:justify-center"
+                className="block rounded-full border border-wood-600/50 bg-transparent py-3 text-center text-sm font-semibold tracking-wider text-wood-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-wood-700 hover:bg-wood-100/30 max-md:min-h-[48px] max-md:flex max-md:items-center max-md:justify-center"
               >
                 ANFRAGEN
               </Link>

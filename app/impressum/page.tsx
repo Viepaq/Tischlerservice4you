@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <section className="py-20 lg:py-28 max-md:py-14">
+    <section className="py-20 lg:py-28 max-md:pb-14">
       <div className="mx-auto max-w-3xl px-5 lg:px-8">
         <h1 className="font-playfair text-3xl font-bold tracking-tight text-foreground sm:text-4xl max-md:text-2xl">
           Impressum
@@ -20,7 +20,7 @@ export default function ImpressumPage() {
           {/* Left column */}
           <div className="space-y-4 text-sm text-foreground/80">
             <div>
-              <p className="font-semibold text-foreground">Neim Zekiri</p>
+              <p className="font-semibold text-foreground">Inh. Neim Zekiri</p>
               <p>Bäuerlegasse 24/G21-22</p>
               <p>1200 Wien</p>
             </div>
@@ -56,6 +56,9 @@ export default function ImpressumPage() {
             <div>
               <p>
                 <span className="font-medium text-foreground">UID Nr.:</span> ATU57350547
+              </p>
+              <p>
+                <span className="font-medium text-foreground">GISA-Zahl:</span> 35317135
               </p>
             </div>
             <div>

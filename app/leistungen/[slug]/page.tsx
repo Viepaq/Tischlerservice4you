@@ -1,18 +1,10 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  CheckCircle,
-  Phone,
-  ArrowUpRight,
-  Users,
-  Lightbulb,
-} from "lucide-react";
+import { ArrowLeft, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { services } from "@/lib/services";
+import EnlargeableImage from "@/components/EnlargeableImage";
 import type { Metadata } from "next";
 
 interface Props {
@@ -38,203 +30,149 @@ export default async function ServicePage({ params }: Props) {
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
 
-  const otherServices = services.filter((s) => s.slug !== slug);
-
   const paragraphs = service.longDescription.split("\n\n");
+  const serviceGallery = service.galleryImages?.length
+    ? service.galleryImages
+    : [service.image];
+  const galleryMain = serviceGallery[0];
+  const gallerySide = serviceGallery.slice(1, 3);
+  const showBottomImage = !["montagen", "reparaturen", "ergaenzungen"].includes(service.slug);
+  const bottomImage =
+    service.slug === "parkette-laminate"
+      ? "/images/galerie/PHOTO-2026-05-06-19-47-25.jpg"
+      : service.slug === "fenster-tueren"
+      ? "/images/galerie/PHOTO-2026-05-06-19-47-17.jpg"
+      : service.slug === "umbau-konstruktionen"
+      ? "/images/galerie/PHOTO-2026-05-06-19-47-18.jpg"
+      : serviceGallery[2] ?? serviceGallery[1] ?? galleryMain;
+  const extraText = service.description;
 
   return (
-    <>
-      {/* ── Hero ── */}
-        <section className="relative bg-gradient-to-b from-wood-50 to-warm-50/60 pb-0 pt-24 sm:pt-28 max-md:pt-20 max-md:pb-8">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <Link
-            href="/#leistungen"
-            className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground max-md:mb-4"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Alle Leistungen
-          </Link>
+    <main className="bg-white pt-24 pb-20 sm:pt-28 sm:pb-24">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <Link
+          href="/#leistungen"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Alle Leistungen
+        </Link>
 
-          <div className="grid items-center gap-10 pb-12 lg:grid-cols-2 max-md:gap-6">
-            <div>
-              <Badge variant="warm" className="mb-4">
-                Leistung
-              </Badge>
-              <h1 className="font-playfair text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl max-md:text-2xl">
-                {service.title}
-              </h1>
-              <p className="mt-3 font-playfair text-lg italic text-warm-400">
-                {service.tagline}
-              </p>
-              <p className="mt-4 max-w-lg leading-relaxed text-muted-foreground">
-                {service.description}
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3 max-md:flex-col max-md:w-full">
-                <Button size="lg" className="max-md:w-full" asChild>
-                  <Link href="/kontakt">Jetzt anfragen</Link>
-                </Button>
-                <Button variant="outline" size="lg" className="gap-2 max-md:w-full" asChild>
-                  <a href="tel:013305557">
-                    <Phone className="h-4 w-4" />
-                    Anrufen
-                  </a>
-                </Button>
-              </div>
+        <header className="mt-8 text-center">
+          <h1 className="font-playfair text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+            {service.title}
+          </h1>
+          <p className="mt-3 font-playfair text-lg italic text-warm-400">
+            {service.tagline}
+          </p>
+        </header>
+
+        <section className="mt-10 grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* Gleiches Text-Content */}
+          <div>
+            <div className="space-y-5">
+              {paragraphs.map((p, i) => (
+                <p key={i} className="leading-relaxed text-muted-foreground">
+                  {p}
+                </p>
+              ))}
             </div>
-            <div className="aspect-[16/10] overflow-hidden rounded-xl border border-border max-md:aspect-[4/3]">
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                priority
-                className="!relative h-full w-full object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+
+            <div className="mt-10 flex flex-wrap gap-3 max-md:flex-col">
+              <Button size="lg" className="max-md:w-full" asChild>
+                <Link href="/kontakt">Jetzt anfragen</Link>
+              </Button>
+              <Button variant="outline" size="lg" className="gap-2 max-md:w-full" asChild>
+                <a href="tel:013305557">
+                  <Phone className="h-4 w-4" />
+                  Anrufen
+                </a>
+              </Button>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── Content ── */}
-      <section className="border-t border-border/60 bg-white py-20 sm:py-28 max-md:py-14">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-3">
-            {/* Main content */}
-            <div className="lg:col-span-2">
-              {/* Long description */}
-              <div className="space-y-4">
-                {paragraphs.map((p, i) => (
-                  <p
-                    key={i}
-                    className="leading-relaxed text-muted-foreground"
-                  >
-                    {p}
-                  </p>
-                ))}
-              </div>
+          {/* Bilder neben dem Text */}
+          <aside className="grid gap-4">
+            <EnlargeableImage
+              src={galleryMain}
+              alt={`${service.title} Bild 1`}
+              wrapperClassName="aspect-[16/10] overflow-hidden rounded-2xl border border-wood-200/50 bg-wood-50"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+              {[0, 1].map((slot) => {
+                const image = gallerySide[slot];
+                if (!image) {
+                  return (
+                    <div
+                      key={`placeholder-${slot}`}
+                      className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-wood-300/70 bg-wood-50/60 p-4 text-center text-sm text-muted-foreground"
+                    >
+                      Platz für weiteres Bild
+                    </div>
+                  );
+                }
 
-              <Separator className="my-10" />
+                return (
+                  <EnlargeableImage
+                    key={image}
+                    src={image}
+                    alt={`${service.title} Bild ${slot + 2}`}
+                    wrapperClassName="aspect-[4/3] overflow-hidden rounded-2xl border border-wood-200/50 bg-wood-50"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                );
+              })}
+            </div>
+          </aside>
+        </section>
 
-              {/* Service details */}
-              <h2 className="font-playfair text-2xl font-bold text-foreground">
+        <section className="mt-16 sm:mt-32 lg:mt-36">
+          <div
+            className={
+              showBottomImage
+                ? "grid items-center gap-8 lg:grid-cols-2 lg:gap-12"
+                : "mx-auto max-w-5xl text-center"
+            }
+          >
+            {showBottomImage && (
+              <EnlargeableImage
+                src={bottomImage}
+                alt={`${service.title} Zusatzbild`}
+                wrapperClassName="aspect-[4/3] overflow-hidden rounded-2xl border border-wood-200/50 bg-wood-50"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            )}
+
+            <div className={showBottomImage ? "" : "text-center"}>
+              <h2 className="font-playfair text-2xl font-bold text-foreground sm:text-3xl">
                 Was wir für Sie tun
               </h2>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <p
+                className={
+                  showBottomImage
+                    ? "mt-4 leading-relaxed text-muted-foreground"
+                    : "mx-auto mt-4 max-w-3xl leading-relaxed text-muted-foreground"
+                }
+              >
+                {extraText}
+              </p>
+
+              <div className="mt-8 grid gap-3 text-left sm:grid-cols-2">
                 {service.details.map((detail) => (
                   <div
                     key={detail}
-                    className="flex items-start gap-2.5 rounded-lg border border-wood-200/50 bg-gradient-to-r from-wood-50/60 to-warm-50/40 p-4"
+                    className="rounded-xl border border-wood-200/60 bg-white/90 px-4 py-3 text-sm text-foreground"
                   >
-                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-500" />
-                    <span className="text-sm text-foreground">{detail}</span>
+                    {detail}
                   </div>
                 ))}
               </div>
-
-              {/* References */}
-              {service.references && service.references.length > 0 && (
-                <div className="mt-10">
-                  <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                    <Users className="h-4 w-4" />
-                    Referenzen
-                  </h3>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {service.references.map((ref) => (
-                      <span
-                        key={ref}
-                        className="rounded-full border border-wood-200/60 bg-wood-50 px-3.5 py-1.5 text-sm text-muted-foreground"
-                      >
-                        {ref}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-1 self-start max-md:mt-8">
-              <div className="sticky top-28 space-y-4">
-                {/* Highlights */}
-                {service.highlights.map((h) => (
-                  <div
-                    key={h.title}
-                    className="rounded-xl border border-wood-200/50 bg-gradient-to-br from-wood-50 to-warm-50 p-6 max-md:p-5"
-                  >
-                    <div className="flex items-center gap-2">
-                      <Lightbulb className="h-4 w-4 text-wood-500" />
-                      <h4 className="font-semibold text-foreground">
-                        {h.title}
-                      </h4>
-                    </div>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {h.text}
-                    </p>
-                  </div>
-                ))}
-
-                {/* CTA */}
-                <div className="rounded-xl border border-border bg-white p-6 max-md:p-5">
-                  <h3 className="font-playfair text-lg font-semibold">
-                    Interesse geweckt?
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Kontaktieren Sie uns für eine unverbindliche Beratung.
-                  </p>
-                  <div className="mt-5 space-y-2.5">
-                    <Button className="w-full" size="lg" asChild>
-                      <Link href="/kontakt">Jetzt anfragen</Link>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full gap-2"
-                      size="lg"
-                      asChild
-                    >
-                      <a href="tel:013305557">
-                        <Phone className="h-4 w-4" />
-                        Anrufen
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── Other Services ── */}
-      <section className="border-t border-wood-200/40 bg-gradient-to-b from-wood-50 via-warm-50 to-wood-100/40 py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <h3 className="font-playfair text-2xl font-bold text-foreground">
-            Weitere Leistungen
-          </h3>
-          <p className="mt-2 text-muted-foreground">
-            Entdecken Sie unser gesamtes Leistungsspektrum.
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-md:grid-cols-1 max-md:gap-3">
-            {otherServices.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/leistungen/${s.slug}`}
-                className="group rounded-xl border border-wood-200/50 bg-white/90 p-6 backdrop-blur-sm transition-all hover:border-warm-300 hover:bg-white hover:shadow-md"
-              >
-                <h4 className="font-playfair text-lg font-semibold text-foreground">
-                  {s.title}
-                </h4>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-2">
-                  {s.shortDescription}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition-all group-hover:gap-2">
-                  Mehr erfahren
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+        </section>
+      </div>
+    </main>
   );
 }

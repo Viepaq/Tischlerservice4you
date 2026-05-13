@@ -15,7 +15,7 @@ export default function AboutSection() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20 max-md:gap-8">
           {/* Image */}
-          <div className="relative">
+          <div className="relative max-md:order-2 max-md:mt-4">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border max-md:aspect-[16/10]">
               <Image
                 src="/Real1.webp"
@@ -36,7 +36,7 @@ export default function AboutSection() {
           </div>
 
           {/* Text */}
-          <div className="max-md:mt-8">
+          <div className="max-md:order-1">
             <Badge variant="warm" className="mb-4">
               {"Über uns"}
             </Badge>

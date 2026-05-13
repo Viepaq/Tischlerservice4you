@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
@@ -41,37 +41,56 @@ export default function Hero() {
 
       {/* Content */}
       <div
-        className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center max-md:justify-start max-md:pt-64"
+        className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center"
         style={{ opacity: textOpacity }}
       >
-        <p className="mb-3 hidden text-xs font-semibold tracking-[0.3em] text-white/80 uppercase max-md:block [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
-          Tischlerservice4you
-        </p>
+        <div className="flex flex-col items-center -translate-y-32 max-md:-translate-y-20">
+          <Image
+            src="/images/Tischler Logo1.png"
+            alt="Tischlerservice4you"
+            width={900}
+            height={506}
+            priority
+            className="pointer-events-none w-[min(94vw,860px)] h-auto object-contain drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)]"
+            sizes="(max-width: 768px) 94vw, 860px"
+          />
 
-        <h1 className="max-w-4xl font-playfair text-4xl font-bold leading-[1.1] text-white max-md:text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-md:[text-shadow:0_2px_8px_rgba(0,0,0,0.4)]">
-          <span className="font-playfair italic font-normal text-warm-100 [text-shadow:0_2px_4px_rgba(0,0,0,0.5),0_0_30px_rgba(0,0,0,0.25)]">
-            Willkommen bei
-          </span>
-          <br />
-          Ihrem Tischler
-        </h1>
+          <p className="mx-auto -mt-[80px] md:-mt-[220px] max-w-sm text-base leading-relaxed text-white/90 sm:text-lg sm:leading-relaxed sm:max-w-xl [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]">
+            Fenster, T&uuml;ren, Montagen und Reparaturen &mdash; professionell, fair
+            und verl&auml;sslich. Seit &uuml;ber 25 Jahren in Wien.
+          </p>
 
-        <p className="mx-auto mt-5 max-w-xs text-sm leading-relaxed text-white/70 sm:text-base sm:leading-relaxed sm:max-w-lg max-md:[text-shadow:0_1px_3px_rgba(0,0,0,0.3)]">
-          Fenster, T&uuml;ren, Montagen und Reparaturen &mdash; professionell,
-          fair und verl&auml;sslich. Seit &uuml;ber 25 Jahren in Wien.
-        </p>
-
-        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row max-md:w-full max-md:max-w-[280px] max-md:gap-2">
-          <Button
-            size="xl"
-            className="w-full max-md:justify-center max-md:h-10 max-md:rounded-lg max-md:px-5 max-md:text-sm max-md:font-medium max-md:shadow-none bg-warm-400 text-white hover:bg-warm-300"
-            asChild
-          >
-            <Link href="/kontakt">Jetzt anfragen</Link>
-          </Button>
+          <div className="relative z-20 mt-8 flex flex-col items-center gap-3 sm:flex-row max-md:w-full max-md:max-w-[280px] max-md:gap-2">
+            <Button
+              size="xl"
+              className="w-full max-md:justify-center max-md:min-h-[44px] max-md:h-auto max-md:rounded-lg max-md:px-5 max-md:text-sm max-md:font-medium max-md:shadow-none bg-transparent border border-white/35 text-white hover:-translate-y-0.5 hover:border-white/75 hover:bg-white/10 hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+              asChild
+            >
+              <Link href="/kontakt">Jetzt anfragen</Link>
+            </Button>
+            <Button
+              size="xl"
+              className="w-full max-md:justify-center max-md:min-h-[44px] max-md:h-auto max-md:rounded-lg max-md:px-5 max-md:text-sm max-md:font-medium max-md:shadow-none bg-transparent border border-white/35 text-white hover:-translate-y-0.5 hover:border-white/75 hover:bg-white/10 hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+              asChild
+            >
+              <a href="tel:013305557" aria-label="Jetzt anrufen">
+                <Phone className="mr-2 h-4 w-4" />
+                Anrufen
+              </a>
+            </Button>
+          </div>
         </div>
 
       </div>
+
+      <Image
+        src="/images/Meister.png"
+        alt="Meisterbetrieb Siegel"
+        width={220}
+        height={220}
+        className="pointer-events-none absolute bottom-10 right-1 z-20 h-auto w-32 opacity-95 sm:bottom-12 sm:right-3 sm:w-40 md:w-52"
+        sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 208px"
+      />
 
       {/* Scroll indicator */}
       <a

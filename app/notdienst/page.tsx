@@ -168,7 +168,7 @@ export default function NotdienstPage() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-center rounded-xl border border-wood-200/50 bg-white/90 p-10 text-center backdrop-blur-sm">
+            <div className="flex flex-col items-center justify-center rounded-xl border border-wood-200/50 bg-white/90 p-10 text-center backdrop-blur-sm max-md:p-6">
               <Clock className="h-10 w-10 text-wood-500" />
               <h3 className="mt-5 font-playfair text-xl font-bold">Rund um die Uhr</h3>
               <p className="mt-2 text-sm text-muted-foreground">
