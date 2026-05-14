@@ -73,7 +73,7 @@ export default function WhyUs() {
 
           <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-wood-200/50 bg-white">
             <Image
-              src="/images/PHOTO-2026-05-05-20-59-35 9.jpg"
+              src="/images/WhatsApp Image 2026-05-14 at 11.03.22.jpeg"
               alt="Tischlerarbeit in der Werkstatt"
               fill
               className="object-cover"
