@@ -57,7 +57,7 @@ export default function Hero() {
 
           <p className="mx-auto -mt-[80px] md:-mt-[220px] max-w-sm text-base leading-relaxed text-white/90 sm:text-lg sm:leading-relaxed sm:max-w-xl [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]">
             Fenster, T&uuml;ren, Montagen und Reparaturen &mdash; professionell, fair
-            und verl&auml;sslich. Seit &uuml;ber 25 Jahren in Wien.
+            und verl&auml;sslich. <span style={{ color: "rgb(228,51,44)" }}>Seit &uuml;ber 25 Jahren in Wien.</span>
           </p>
 
           <div className="relative z-20 mt-8 flex flex-col items-center gap-3 sm:flex-row max-md:w-full max-md:max-w-[280px] max-md:gap-2">
@@ -83,14 +83,6 @@ export default function Hero() {
 
       </div>
 
-      <Image
-        src="/images/Meister.png"
-        alt="Meisterbetrieb Siegel"
-        width={220}
-        height={220}
-        className="pointer-events-none absolute bottom-10 right-1 z-20 h-auto w-32 opacity-95 sm:bottom-12 sm:right-3 sm:w-40 md:w-52"
-        sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 208px"
-      />
 
       {/* Scroll indicator */}
       <button
