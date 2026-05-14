@@ -54,7 +54,7 @@ export default function Header() {
           <Link
             href="/"
             className={cn(
-              "flex items-center transition-opacity duration-300",
+              "flex items-center transition-opacity duration-300 max-md:flex-1 max-md:overflow-hidden max-md:h-14",
               isHome && !scrolled && "pointer-events-none opacity-0"
             )}
             style={{ marginTop: "6px" }}
@@ -64,7 +64,7 @@ export default function Header() {
               alt="Tischlerservice4you"
               width={560}
               height={130}
-              className="h-[110px] w-auto object-contain transition-all duration-500 max-md:h-24"
+              className="h-[110px] w-auto object-contain transition-all duration-500 max-md:h-[145px]"
               style={!scrolled ? { filter: "drop-shadow(0 1px 6px rgba(0,0,0,0.55)) brightness(1.15)" } : undefined}
               priority
             />
