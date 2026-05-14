@@ -7,9 +7,6 @@ export interface GalerieFoto {
 }
 
 const GALERIE_DATEIEN = [
-  "PHOTO-2026-05-05-20-59-33.jpg",
-  "PHOTO-2026-05-05-20-59-34.jpg",
-  "PHOTO-2026-05-05-20-59-34 5.jpg",
   "PHOTO-2026-05-05-20-59-34 7.jpg",
   "PHOTO-2026-05-05-20-59-34 8.jpg",
   "PHOTO-2026-05-05-20-59-34 9.jpg",
