@@ -49,12 +49,12 @@ export default function Header() {
             : "bg-transparent"
         )}
       >
-        <div className="flex h-16 w-full items-center justify-between px-4 lg:px-6 overflow-visible max-md:h-14">
+        <div className="flex h-16 w-full items-center justify-between px-4 lg:px-6 overflow-visible max-md:h-[68px]">
           {/* Logo */}
           <Link
             href="/"
             className={cn(
-              "flex items-center transition-opacity duration-300 max-md:flex-1 max-md:overflow-hidden max-md:h-14",
+              "flex items-center transition-opacity duration-300 max-md:flex-1 max-md:overflow-hidden max-md:h-[68px]",
               isHome && !scrolled && "pointer-events-none opacity-0"
             )}
             style={{ marginTop: "6px" }}
@@ -64,7 +64,7 @@ export default function Header() {
               alt="Tischlerservice4you"
               width={560}
               height={130}
-              className="h-[110px] w-auto object-contain transition-all duration-500 max-md:h-[145px]"
+              className="h-[110px] w-auto object-contain transition-[filter,opacity] duration-500 max-md:h-[165px] max-md:translate-y-[7px]"
               style={!scrolled ? { filter: "drop-shadow(0 1px 6px rgba(0,0,0,0.55)) brightness(1.15)" } : undefined}
               priority
             />
