@@ -14,9 +14,10 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
-  title: "Notdienst 24H | Tischlerservice4you Wien",
+  title: "Notdienst 24H",
   description:
-    "24-Stunden-Notdienst nach Einbruch. Sofortige Hilfe, auch an Sonn- und Feiertagen.",
+    "24-Stunden-Notdienst nach Einbruch in Wien. Sofortige Hilfe, auch an Sonn- und Feiertagen.",
+  alternates: { canonical: "/notdienst" },
 };
 
 const BENEFITS = [

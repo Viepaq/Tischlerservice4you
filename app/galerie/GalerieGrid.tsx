@@ -1,18 +1,44 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { GALERIE_FOTOS, type GalerieKategorie } from "@/lib/galerie";
 
 const KATEGORIEN: GalerieKategorie[] = ["Alle", "Türen", "Fenster", "Möbel"];
+const BATCH_SIZE = 12;
 
 export default function GalerieGrid() {
   const [aktiv, setAktiv] = useState<GalerieKategorie>("Alle");
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
   const gefiltert =
     aktiv === "Alle" ? GALERIE_FOTOS : GALERIE_FOTOS.filter((f) => f.kategorie === aktiv);
+  const sichtbar = gefiltert.slice(0, visibleCount);
+  const hasMore = visibleCount < gefiltert.length;
+
+  useEffect(() => {
+    setVisibleCount(BATCH_SIZE);
+  }, [aktiv]);
+
+  useEffect(() => {
+    if (!hasMore) return;
+    const el = sentinelRef.current;
+    if (!el) return;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleCount((c) => Math.min(c + BATCH_SIZE, gefiltert.length));
+        }
+      },
+      { rootMargin: "300px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [hasMore, gefiltert.length, visibleCount]);
 
   const prev = useCallback(() => {
     if (lightbox === null) return;
@@ -74,7 +100,7 @@ export default function GalerieGrid() {
 
       {/* Gleichmäßiges Grid */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {gefiltert.map((foto, i) => (
+        {sichtbar.map((foto, i) => (
           <button
             key={foto.src}
             onClick={() => setLightbox(i)}
@@ -94,6 +120,7 @@ export default function GalerieGrid() {
           </button>
         ))}
       </div>
+      {hasMore && <div ref={sentinelRef} className="h-px" aria-hidden="true" />}
 
       {/* Lightbox */}
       {lightbox !== null && gefiltert[lightbox] && (
@@ -133,7 +160,6 @@ export default function GalerieGrid() {
               height={900}
               className="h-auto max-h-[85vh] w-full rounded-xl object-contain"
               sizes="(max-width: 1024px) 100vw, 80vw"
-              priority
             />
           </div>
 

@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 const STRENGTHS = [
   {
     icon: Award,
-    title: "25+ Jahre Erfahrung",
+    title: "30+ Jahre Erfahrung",
     description: "Handschlagsqualität und fachgerechte Arbeit seit über einem Vierteljahrhundert.",
     color: "from-amber-100 to-wood-100 text-amber-700",
   },

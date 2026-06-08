@@ -5,6 +5,7 @@ import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { readContactForm, sendViaMailto } from "@/lib/contact";
 
 const CONTACT = [
   { icon: MapPin, label: "Adresse", value: "Bäuerlegasse 24/G21-22, 1200 Wien" },
@@ -17,6 +18,7 @@ export default function ContactForm() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    sendViaMailto(readContactForm(e.currentTarget));
     setSubmitted(true);
   }
 
@@ -26,9 +28,14 @@ export default function ContactForm() {
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-50">
           <CheckCircle className="h-6 w-6 text-green-600" />
         </div>
-        <h2 className="mt-4 font-playfair text-lg font-semibold">Nachricht gesendet!</h2>
+        <h2 className="mt-4 font-playfair text-lg font-semibold">Fast geschafft!</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Vielen Dank. Wir melden uns schnellstmöglich bei Ihnen.
+          Ihr E-Mail-Programm wurde geöffnet — bitte schicken Sie die Nachricht
+          ab. Alternativ erreichen Sie uns direkt unter{" "}
+          <a href="tel:013305557" className="font-medium text-primary hover:underline">
+            013305557
+          </a>
+          .
         </p>
         <Button variant="outline" size="sm" className="mt-5" onClick={() => setSubmitted(false)}>
           Neue Nachricht

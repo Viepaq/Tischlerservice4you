@@ -15,9 +15,21 @@ export default function AnimateOnScroll({ children, className, delay = 0 }: Prop
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion || typeof IntersectionObserver === "undefined") {
+      setInView(true);
+      return;
+    }
+
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setInView(true);
+        if (entry.isIntersecting) {
+          setInView(true);
+          io.disconnect();
+        }
       },
       { threshold: 0.1, rootMargin: "-40px" }
     );

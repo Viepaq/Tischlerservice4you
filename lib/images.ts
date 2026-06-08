@@ -34,19 +34,19 @@ export const images = {
       alt: "Fenster und Türen Montage",
     },
     montagen: {
-      src: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80",
+      src: "/images/galerie/PHOTO-2026-05-06-08-26-37.jpg",
       alt: "Professionelle Montagearbeiten",
     },
     reparaturen: {
-      src: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80",
+      src: "/images/galerie/PHOTO-2026-05-05-20-59-36%203.jpg",
       alt: "Reparaturarbeiten",
     },
     ergaenzungen: {
-      src: "https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=800&q=80",
+      src: "/images/galerie/PHOTO-2026-05-05-20-59-35%2010.jpg",
       alt: "Individuelle Ergänzungen",
     },
     "umbau-konstruktionen": {
-      src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+      src: "/images/galerie/PHOTO-2026-05-06-19-47-16.jpg",
       alt: "Umbau und Konstruktionen",
     },
   },

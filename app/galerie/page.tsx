@@ -1,10 +1,13 @@
+import dynamic from "next/dynamic";
 import { Badge } from "@/components/ui/badge";
-import GalerieGrid from "./GalerieGrid";
+
+const GalerieGrid = dynamic(() => import("./GalerieGrid"));
 
 export const metadata = {
-  title: "Galerie — Tischlerservice4you",
+  title: "Galerie",
   description:
     "Einblicke in unsere Arbeit: Türen, Fenster, Möbel und mehr aus unserem Wiener Tischlerbetrieb.",
+  alternates: { canonical: "/galerie" },
 };
 
 export default function GaleriePage() {

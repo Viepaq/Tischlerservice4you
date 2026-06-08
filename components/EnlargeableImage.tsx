@@ -63,7 +63,6 @@ export default function EnlargeableImage({
               height={1200}
               className="h-auto max-h-[90vh] w-full rounded-xl object-contain"
               sizes="(max-width: 1024px) 100vw, 85vw"
-              priority
             />
           </div>
         </div>

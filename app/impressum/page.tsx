@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Impressum | Tischlerservice4you",
+  title: "Impressum",
   description: "Impressum und Firmendaten von Tischlerservice4you – Neim Zekiri, 1200 Wien.",
+  alternates: { canonical: "/impressum" },
 };
 
 export default function ImpressumPage() {

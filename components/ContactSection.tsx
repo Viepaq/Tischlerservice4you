@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { readContactForm, sendViaMailto } from "@/lib/contact";
 
 const CONTACT_DETAILS = [
   { icon: MapPin, label: "Adresse", value: "Bäuerlegasse 24/G21-22, 1200 Wien", href: undefined },
@@ -19,6 +20,7 @@ export default function ContactSection() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    sendViaMailto(readContactForm(e.currentTarget));
     setSubmitted(true);
   }
 
@@ -48,10 +50,15 @@ export default function ContactSection() {
                     <CheckCircle className="h-7 w-7 text-green-600" />
                   </div>
                   <h3 className="mt-4 font-playfair text-xl font-semibold">
-                    Nachricht gesendet!
+                    Fast geschafft!
                   </h3>
                   <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-                    Vielen Dank. Wir melden uns schnellstmöglich bei Ihnen.
+                    Ihr E-Mail-Programm wurde geöffnet — bitte schicken Sie die
+                    Nachricht ab. Oder rufen Sie uns direkt an:{" "}
+                    <a href="tel:013305557" className="font-medium text-primary hover:underline">
+                      013305557
+                    </a>
+                    .
                   </p>
                   <Button variant="outline" className="mt-5" onClick={() => setSubmitted(false)}>
                     Neue Nachricht
@@ -112,14 +119,14 @@ export default function ContactSection() {
 
             <div className="overflow-hidden rounded-xl border border-wood-200/50">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.5!2d16.37!3d48.23!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sInnstra%C3%9Fe+2%2C+1200+Wien!5e0!3m2!1sde!2sat!4v1"
+                src="https://maps.google.com/maps?q=B%C3%A4uerlegasse%2024%2C%201200%20Wien&z=16&output=embed"
                 width="100%"
                 height="200"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Standort"
+                title="Standort Tischlerservice4you, Bäuerlegasse 24, 1200 Wien"
               />
             </div>
           </div>

@@ -27,7 +27,7 @@ export default function AboutSection() {
             </div>
             <div className="absolute -bottom-5 right-4 rounded-xl border border-wood-200/60 bg-white px-5 py-4 shadow-lg shadow-wood-200/20 max-md:-bottom-4 max-md:right-2 sm:-right-6">
               <div className="font-playfair text-3xl font-bold text-wood-500">
-                25+
+                30+
               </div>
               <div className="text-xs font-medium text-muted-foreground">
                 Jahre Erfahrung

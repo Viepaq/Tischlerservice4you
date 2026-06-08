@@ -19,8 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
   return {
-    title: `${service.title} | Tischlerservice4you Wien`,
+    title: service.title,
     description: service.shortDescription,
+    alternates: { canonical: `/leistungen/${service.slug}` },
+    openGraph: {
+      title: `${service.title} | Tischlerservice4you`,
+      description: service.shortDescription,
+      images: [service.galleryImages?.[0] ?? service.image],
+    },
   };
 }
 

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
+import dynamic from "next/dynamic";
+
+const ContactForm = dynamic(() => import("@/components/ContactForm"));
 
 export const metadata: Metadata = {
-  title: "Kontakt | Tischlerservice4you Wien",
+  title: "Kontakt",
   description:
     "Kontaktieren Sie uns für Tischlerarbeiten in Wien. Bäuerlegasse 24/G21-22, 1200 Wien. Telefon: 013305557.",
+  alternates: { canonical: "/kontakt" },
 };
 
 export default function KontaktPage() {

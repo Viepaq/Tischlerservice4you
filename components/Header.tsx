@@ -22,12 +22,18 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     function handleScroll() {
-      if (!isHome) {
-        setScrolled(true);
-        return;
-      }
-      setScrolled(window.scrollY > 60);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        if (!isHome) {
+          setScrolled(true);
+        } else {
+          setScrolled(window.scrollY > 60);
+        }
+        ticking = false;
+      });
     }
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -49,7 +55,7 @@ export default function Header() {
             : "bg-transparent"
         )}
       >
-        <div className="flex h-16 w-full items-center justify-between px-4 lg:px-6 overflow-visible max-md:h-[68px]">
+        <div className="flex h-20 w-full items-center justify-between px-4 lg:px-8 overflow-visible max-md:h-[72px]">
           {/* Logo */}
           <Link
             href="/"
@@ -66,18 +72,18 @@ export default function Header() {
               height={130}
               className="h-[110px] w-auto object-contain transition-[filter,opacity] duration-500 max-md:h-[165px] max-md:translate-y-[7px]"
               style={!scrolled ? { filter: "drop-shadow(0 1px 6px rgba(0,0,0,0.55)) brightness(1.15)" } : undefined}
-              priority
+              priority={!isHome}
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-7 lg:flex">
+          <nav className="hidden items-center gap-8 lg:flex">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-[11px] font-semibold tracking-[0.16em] transition-colors duration-300",
+                  "text-[13px] font-semibold tracking-[0.14em] transition-colors duration-300",
                   scrolled
                     ? "text-wood-800/90 hover:text-foreground"
                     : "text-white/70 hover:text-white"
@@ -103,7 +109,7 @@ export default function Header() {
             <Link
               href="/kontakt"
               className={cn(
-                "rounded-full px-5 py-2 text-[11px] font-semibold tracking-wider transition-all duration-300 border",
+                "rounded-full px-5 py-2 text-[13px] font-semibold tracking-wider transition-all duration-300 border",
                 scrolled
                   ? "border-wood-600/50 text-wood-700 hover:-translate-y-0.5 hover:border-wood-700 hover:bg-wood-100/30"
                   : "border-white/40 text-white hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/10"
