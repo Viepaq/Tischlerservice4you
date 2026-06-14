@@ -34,7 +34,7 @@ export default function Footer() {
             </p>
             <p className="mt-1 max-w-xs text-sm text-muted-foreground">
               Wir sind ein Österreichisches Unternehmen.
-              Ihr verlässlicher Partner für Tischlerarbeiten in Wien.
+              Ihr verlässlicher Partner für Tischlerarbeiten in Wien und Umgebung.
             </p>
           </div>
 
