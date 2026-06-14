@@ -1,6 +1,6 @@
 export const site = {
   name: "Tischlerservice4you",
-  legalName: "Tischlerservice4you – Neim Zekiri",
+  legalName: "Tischlerservice4you e.U.",
   owner: "Neim Zekiri",
   url: "https://www.tischlerservice4you.at",
   phone: "013305557",

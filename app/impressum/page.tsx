@@ -56,19 +56,24 @@ export default function ImpressumPage() {
           <div className="space-y-4 text-sm text-foreground/80">
             <div>
               <p>
-                <span className="font-medium text-foreground">UID Nr.:</span> ATU57350547
+                <span className="font-medium text-foreground">UID Nr.:</span> ATU69790345
               </p>
               <p>
                 <span className="font-medium text-foreground">GISA-Zahl:</span> 35317135
               </p>
+              <p>
+                <span className="font-medium text-foreground">FN:</span> 544533 i
+              </p>
             </div>
             <div>
               <p>
-                <span className="font-medium text-foreground">Bankverbindung:</span> Oberbank BLZ:
-                15000
+                <span className="font-medium text-foreground">Bankverbindung:</span> Oberbank
               </p>
               <p>
-                <span className="font-medium text-foreground">IBAN:</span> AT59 1500 0044 2101 9847
+                <span className="font-medium text-foreground">IBAN:</span> AT61 1500 0044 2103 0190
+              </p>
+              <p>
+                <span className="font-medium text-foreground">BIC:</span> OBKLAT2L
               </p>
             </div>
           </div>
@@ -77,6 +82,19 @@ export default function ImpressumPage() {
         <hr className="my-10 border-wood-200/60" />
 
         <div className="space-y-8 text-sm leading-relaxed text-foreground/80">
+          <div>
+            <h2 className="font-playfair text-lg font-semibold text-foreground">
+              Eigentumsvorbehalt
+            </h2>
+            <p className="mt-2">
+              Waren bleiben bis zur vollständigen Bezahlung Eigentum der Fa. Tischlerservice4you
+              e.U.
+            </p>
+            <p className="mt-2">
+              <span className="font-medium text-foreground">Gerichtsstand:</span> Wien
+            </p>
+          </div>
+
           <div>
             <h2 className="font-playfair text-lg font-semibold text-foreground">
               Bildergalerien
